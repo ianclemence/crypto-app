@@ -1,19 +1,21 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
+import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import './index.css';
-import App from './App';
 import { BrowserRouter as Router } from 'react-router-dom';
-import 'antd/dist/antd.css'
+
+import App from './App';
 import store from './app/store';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
+import 'antd/dist/antd.css';
+
+ReactDOM.render(
   <React.StrictMode>
     <Router>
       <Provider store={store}>
         <App />
-      </Provider>  
+      </Provider>
     </Router>
-  </React.StrictMode>
+  </React.StrictMode>,
+  document.getElementById('root'),
 );
+
